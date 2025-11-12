@@ -11,6 +11,10 @@ class Main extends BaseController
     {
         $bundesland = new Bundesland(); //vytvoříme novou instanci třídy Bundesland
         $zeme = $bundesland->findAll(); //do zeme vypíšeme všechny data pomocí findAll()
-        var_dump($zeme);
+        //var_dump($zeme);
+        $data = [
+            "zeme" => $zeme
+        ]; //numericke pole = klíče jsou jenom čísla
+        echo view('zeme', $data);
     }
 }
