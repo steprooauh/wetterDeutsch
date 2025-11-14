@@ -1,8 +1,8 @@
 <?= $this->extend('layout/template');  ?>
 <?= $this->section('content'); ?>
 
-<h1 class="text-center p-2" style="font-style: italic; font-size: 80px ; margin-top: 60px">Přehled zemí</h1><br>
-<img src="img/icon2.png" style="width: 15%; margin-top: -230px;">
+<h1 class="text-center p-2" style="font-style: italic; font-size: 80px ; margin-top: 60px">Přehled zemí v Německu</h1><br>
+<img src="img/icon2.png" style="width: 10%; margin-top: -230px;">
 <?php
 $table = new \CodeIgniter\View\Table(); //promena table ma parametry CodeIgniter\View\Table
 

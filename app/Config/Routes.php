@@ -7,3 +7,4 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Main::index');
 $routes->get('stanice/(:num)', 'Main::stanice/$1'); //routa pro stanice(číslo) a zavolá controller Main metodu stanice s parametrem
+$routes->get('data/S_.(:num)', 'Main::data/$1');
