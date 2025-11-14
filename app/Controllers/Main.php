@@ -28,6 +28,7 @@ class Main extends BaseController
         $data = [
           "stanice" => $stanice
         ];
-        echo view ('stanice', $data);
+        var_dump($stanice);
+        //echo view ('stanice', $data);
     }
 }
