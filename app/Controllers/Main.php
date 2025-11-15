@@ -21,24 +21,42 @@ class Main extends BaseController
     }
 
     public function stanice($id)
-    { //$id je id země
+    {
         $bundesland = new Bundesland();
-        $zeme = $bundesland->find($id); 
+        $zeme = $bundesland->find($id);
+
         $station = new Station();
         $stanice = $station->where('bundesland', $id)->findAll();
+        $zemeName =  $zeme->name;
+        $file = 'Map_' . $zemeName . '_in_Germany.png';
+        $vlajka = 'Flag_of_' . $zemeName . '.png';
+
+        $mapaURL = base_url('img/mapy/' . $file);
+        $vlajkaURL = base_url('img/vlajky/' . $vlajka);
+
         $data = [
             "zeme" => $zeme,
-          "stanice" => $stanice
+            "stanice" => $stanice,
+            "mapa_soubor" => $mapaURL,
+            "vlajka_soubor" => $vlajkaURL
         ];
-        //var_dump('stanice', $stanice);
-        echo view ('stanice', $data);
+
+        echo view('stanice', $data);
     }
 
-    public function data($id){
+
+    public function data($idStanice)
+    {
         $station = new Station();
-        $stanice = $station->find($id);
+        $stanice = $station->find($idStanice);
         $data = new Data();
-        $dataStanic = $data->where('Stations_ID', $id)->findAll();
-        var_dump('dataStanic', $dataStanic);
+        $dataStanic = $data->where('Stations_ID', $idStanice)->paginate(25);
+        $pager = $data->pager;
+        $dataObalka = [
+            "stanice" => $stanice,
+            "dataStanic" => $dataStanic,
+            'pager' => $pager
+        ];
+        echo view('data', $dataObalka);
     }
 }

@@ -16,7 +16,7 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/
      */
-    public string $baseURL = 'http://localhost/prokop/wetterDeutsch';
+    public string $baseURL = 'http://localhost/wetterDeutsch';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
