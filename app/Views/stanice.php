@@ -20,7 +20,7 @@
         
         <div class="col-lg-6 col-md-8 col-12">
             <div class="shadow-lg rounded overflow-hidden">
-                <img src="<?= $mapa_soubor ?>" class="img-fluid w-100"
+                <img src="<?= base_url('img/mapy/'.$zeme->picmap); ?>" class="img-fluid w-100"
                     style="border: 2px solid #ccc; max-height: 400px; object-fit: contain;"
                     alt="Mapa <?= $zeme->name ?>">
             </div>
@@ -29,7 +29,7 @@
 
         <div class="col-lg-4 col-md-4 col-8 d-flex flex-column align-items-center justify-content-center">
             <div class="shadow-lg rounded overflow-hidden border border-3 border-dark">
-                <img src="<?= $vlajka_soubor ?>" class="img-fluid w-100"
+                <img src="<?= base_url('img/vlajky/'.$zeme->picflag); ?>" class="img-fluid w-100"
                     style="max-height: 250px; object-fit: contain;"
                     alt="Vlajka <?= $zeme->name ?>">
             </div>
